@@ -1,0 +1,47 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "81:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - laravel_network
+    restart: always
+
+  myadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    depends_on: 
+      - mysql
+    ports:
+      - "82:80"
+    environment:
+      PMA_HOST: mysql
+    networks:
+      - laravel_network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    ports: 
+      - "3306:3306"
+    volumes: 
+      - db_biblioteca:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: biblioteca
+    networks:
+      - laravel_network
+
+volumes:
+  db_biblioteca:
+    driver: local
+
+networks:
+  laravel_network:
+    driver: bridge

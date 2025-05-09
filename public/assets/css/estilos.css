@@ -1,0 +1,89 @@
+*{
+    margin:0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1 1 80%;
+    text-align: justify;
+}
+header{
+    background-color: rgb(70, 93, 170);
+    color:azure;
+}
+header h1{
+    margin: 0;
+}
+h1{
+    font-size: 30pt;
+}
+.titulo{
+    text-align: center;
+    margin-top: 3px;
+}
+nav ul{
+    list-style-type: none;
+    
+}
+
+.navbar{
+    background-color: rgb(70, 93, 170);
+}
+
+nav ul li{
+    text-align: center;
+    color:azure
+}
+
+nav ul li a{
+    color:azure;
+    text-decoration: none;
+}
+
+#bienvenido{
+    text-align: center;
+    margin-top: 3%;
+}
+
+.tabla{
+    max-width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table th, table td{
+    text-align: center;
+}
+
+.botonInsertar{
+    float: right;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.btnEditar{
+    margin-right: 5px;
+}
+
+footer{
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: azure;
+    display: flex;
+    background-color:rgb(70, 93, 170);
+    padding: 3%;
+    margin-top: 3%;
+}
+
+footer div {
+    flex: 1 1 50%;
+    padding: 20px;
+}
+
+.interactuable.table tbody tr:hover{
+    cursor:pointer;
+}
